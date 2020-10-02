@@ -1,0 +1,42 @@
+
+<div [hidden]="submitted" style="width: 400px;" class = "container">
+  <h2>Book your slot</h2>
+  <hr>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Pick A Date</label>
+      <input type="date" class="form-control" id="date" required [(ngModel)]="user.date" name="date">
+    </div>
+
+    <div class="select">
+      <select name="expert" id="expert" class="dropdown" required [(ngModel)]="user.expert">
+        <option value="syam" class="dropdown-content">Choose your expertise:</option>
+        <option value="syam" class="dropdown-content">Syam sundhar</option>
+        <option value="sidhi" class="dropdown-content">Sidhi patel</option>
+        <option value="alia" class="dropdown-content">Alia khan</option>
+        <option value="umang" class="dropdown-content">Umang sing</option>
+        <option value="natasha" class="dropdown-content">Natasha</option>
+      </select>
+    </div>
+<br>
+    
+    <div class="select">
+      
+      <select name="expert" id="dropdown" class="dropdown" required [(ngModel)]="user.expert">
+        <option value="expert">Available slots</option>
+        <option value="syam">8:30AM</option>
+        <option value="sidhi">Sidhi patel</option>
+        <option value="alia">Alia khan</option>
+        <option value="umang">Umang sing</option>
+        <option value="natasha">Natasha</option>
+      </select>
+    </div>
+<br>
+    <button type="submit"  class="registerbtn">Book My Slot</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You can check your appointment in the status</h4>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+</div>
